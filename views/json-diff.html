@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="/static/css/main.css" charset="utf-8">
   </head>
   <body>
+  <div>
+
+    <form method="get">
+      Aurl:<input name="aurl" type="text" value="{{.Aurl}}" width="1000%">
+      <br>
+      Burl:<input name ="burl" type="text" value="{{.Burl}}">
+      <br>
+      <button type="submit">提交</button>
+    </form>
+  </div>
     <header id="header">
       <div class="left">
         <h1>{} Json Diff</h1>
@@ -32,10 +42,10 @@
       </div>
     </header>
     <div class="json-diff-input">
-      <textarea id="json-diff-left"></textarea>
+      <textarea id="json-diff-left">{{.Ajson}}</textarea>
     </div>
     <div class="json-diff-input">
-      <textarea id="json-diff-right"></textarea>
+      <textarea id="json-diff-right">{{.Bjson}}</textarea>
     </div>
     <script src="/static/www/lib/fast-json-patch/dist/json-patch-duplex.min.js" charset="utf-8"></script>
     <script src="/static/www/lib/backbone-events-standalone/backbone-events-standalone.min.js" charset="utf-8"></script>
