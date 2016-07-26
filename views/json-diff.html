@@ -6,16 +6,23 @@
     <link rel="stylesheet" href="/static/www/lib/codemirror/lib/codemirror.css" charset="utf-8">
     <link rel="stylesheet" href="/static/www/lib/codemirror/theme/tomorrow-night.css" charset="utf-8">
     <link rel="stylesheet" href="/static/css/main.css" charset="utf-8">
+    <style>
+      #chenjian{ padding: 20px 0 0 20px; border-radius: 20px; text-align: center; }
+      #chenjian div{ margin-bottom: 20px; text-align: left; height: 32px; }
+      #chenjian span{ display: inline-block; width: 100px;  margin-left: 20px; font-size: 24px; color: #fff; }
+      #chenjian input{ width: 75%; padding-left: 10px; height: 30px; font-size: 20px; color: #666; border-radius: 5px; border: 0; }
+      #chenjian button{ margin-right: 20%; float: right; width: 200px; height: 40px; border-radius: 5px; border: 0; font-size: 20px; padding: 0; font-family: "微软雅黑"; }
+    </style>
   </head>
   <body>
-  <div>
+  <div id="chenjian">
 
-    <form method="get">
-      Aurl:<input name="aurl" type="text" value="{{.Aurl}}" width="1000%">
-      <br>
-      Burl:<input name ="burl" type="text" value="{{.Burl}}">
-      <br>
-      <button type="submit">提交</button>
+    <form method="get" >
+      <div><span>Aurl:</span><input name="aurl" type="text" value="{{.Aurl}}"></div>
+
+      <div><span>Burl:</span><input name ="burl" type="text" value="{{.Burl}}"></div>
+
+      <div><button type="submit">提交</button></div>
     </form>
 
   </div>
@@ -64,6 +71,9 @@
       ga('create', 'UA-21007774-21', 'auto');
       ga('send', 'pageview');
 
+      window.onload = function () {
+
+      }
     </script>
   </body>
 </html>
