@@ -24,6 +24,6 @@ _testmain.go
 *.exe
 *.test
 *.prof
-
+nohup.out
 /blog
 /conf/app.conf
