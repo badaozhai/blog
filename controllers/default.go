@@ -15,6 +15,7 @@ type MainController struct {
 func (c *MainController) Get() {
 	session := request.NewSession()
 	URL := `https://www.google.com.hk`
+
 	html,err:= http_get(session,URL)
 	if err != nil{
 		fmt.Println(err)
@@ -28,6 +29,7 @@ func (c *MainController) Search() {
 	session := request.NewSession()
 	URL := `https://www.google.com.hk`
 	URL = URL + `?q=`+q
+	fmt.Println(URL)
 	html,err:= http_get(session,URL)
 	if err != nil{
 		fmt.Println(err)
