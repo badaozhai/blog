@@ -25,5 +25,4 @@ _testmain.go
 *.test
 *.prof
 nohup.out
-/blog
 /conf/app.conf
