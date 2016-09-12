@@ -23,6 +23,20 @@ func (c *MainController) Get() {
 		c.Ctx.WriteString(html)
 	}
 }
+func (c *MainController) Search() {
+	q := c.Input().Get("q")
+	session := request.NewSession()
+	URL := `https://www.google.com.hk`
+	URL = URL + `?q=`+q
+	html,err:= http_get(session,URL)
+	if err != nil{
+		fmt.Println(err)
+		c.Ctx.WriteString("hello,world")
+	}else{
+		c.Ctx.WriteString(html)
+	}
+
+}
 
 func http_get(session *request.RequestSession,URL string)(string,error){
 	httpclient := http_client.New(URL, nil)
