@@ -22,7 +22,6 @@ func (c *MainController) Get() {
 	}else{
 		c.Ctx.WriteString(html)
 	}
-
 }
 
 func http_get(session *request.RequestSession,URL string)(string,error){
@@ -31,8 +30,8 @@ func http_get(session *request.RequestSession,URL string)(string,error){
 	req.Add("Host", " www.google.com")
 	req.Add("Connection", " keep-alive")
 	req.Add("Cache-Control", " no-cache")
-	req.Add("Accept", " */*")
-	//req.Add("X-Requested-With", " XMLHttpRequest")
+	req.Add("Accept", " text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+	req.Add("upgrade-insecure-requests", " 1")
 	//req.Add("If-Modified-Since", " 0")
 	req.Add("User-Agent", " " + session.UserAgent)
 	//req.Add("Referer", " https://kyfw.12306.cn/otn/leftTicket/init")
