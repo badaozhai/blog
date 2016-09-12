@@ -11,9 +11,9 @@ import (
 type MainController struct {
 	beego.Controller
 }
-
+var session *request.RequestSession = request.NewSession()
 func (c *MainController) Get() {
-	session := request.NewSession()
+
 	URL := `https://www.google.com.hk`
 
 	html,err:= http_get(session,URL)
@@ -26,7 +26,6 @@ func (c *MainController) Get() {
 }
 func (c *MainController) Search() {
 	q := c.Input().Get("q")
-	session := request.NewSession()
 	URL := `https://www.google.com.hk`
 	URL = URL + `?q=`+q
 	fmt.Println(URL)
