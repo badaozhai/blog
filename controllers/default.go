@@ -14,7 +14,7 @@ type MainController struct {
 
 func (c *MainController) Get() {
 	session := request.NewSession()
-	URL := `https://www.google.com`
+	URL := `https://www.google.com.hk`
 	html,err:= http_get(session,URL)
 	if err != nil{
 		fmt.Println(err)
@@ -27,7 +27,7 @@ func (c *MainController) Get() {
 func http_get(session *request.RequestSession,URL string)(string,error){
 	httpclient := http_client.New(URL, nil)
 	req := httpclient.Req.Header
-	req.Add("Host", " www.google.com")
+	req.Add("Host", " www.google.com.hk")
 	req.Add("Connection", " keep-alive")
 	req.Add("Cache-Control", " no-cache")
 	req.Add("Accept", " text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
