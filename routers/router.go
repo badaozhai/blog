@@ -6,6 +6,7 @@ import (
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
-    beego.Router("/json-diff",&controllers.JsonDiffController{})
+	beego.Router("/", &controllers.MainController{})
+	beego.Router("/search", &controllers.MainController{}, "*:Search")
+	beego.Router("/json-diff", &controllers.JsonDiffController{})
 }
